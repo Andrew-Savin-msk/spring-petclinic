@@ -52,7 +52,6 @@ public class Person extends BaseEntity {
 	}
 
 	public String getFullName() {
-<<<<<<< HEAD
     	String fullName = "";
     	if (this.firstName != null && !this.firstName.trim().isEmpty()) {
         	fullName += this.firstName;
