@@ -52,7 +52,18 @@ public class Person extends BaseEntity {
 	}
 
 	public String getFullName() {
-    	return this.firstName + " " + this.lastName;
+    	String fullName = "";
+    	if (this.firstName != null && !this.firstName.isEmpty()) {
+        	fullName += this.firstName;
+    	}
+    	if (this.lastName != null && !this.lastName.isEmpty()) {
+        	if (!fullName.isEmpty()) {
+            	fullName += " ";
+        	}
+        	fullName += this.lastName;
+    	}
+    	return fullName;
 	}
+
 
 }
