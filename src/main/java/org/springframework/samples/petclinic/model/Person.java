@@ -52,12 +52,17 @@ public class Person extends BaseEntity {
 	}
 
 	public String getFullName() {
-    	StringBuilder fullNameBuilder = new StringBuilder();
-    	fullNameBuilder.append(this.firstName)
-    	               .append(" ")
-    	               .append(this.lastName);
+   		StringBuilder fullNameBuilder = new StringBuilder();
+    	if (this.firstName != null && !this.firstName.isEmpty()) {
+    	    fullNameBuilder.append(this.firstName);
+    	}
+    	if (this.lastName != null && !this.lastName.isEmpty()) {
+    	    if (fullNameBuilder.length() > 0) {
+    	    	fullNameBuilder.append(" ");
+        	}
+        	fullNameBuilder.append(this.lastName);
+    	}
     	return fullNameBuilder.toString();
 	}
-
 
 }
